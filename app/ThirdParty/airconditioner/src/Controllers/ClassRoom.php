@@ -19,6 +19,24 @@ class ClassRoom extends BaseController
 
     public function index()
     {
-        return view('AirConditioner\Views\classroom\index');
+		$table = new \CodeIgniter\View\Table();
+		$template = config('TableBootstrap')->getTemplate();
+		$table->setTemplate($template);
+
+		$heading = ['No', 'Class', 'Section', 'Floor', 'AC Item(s)', 'Action'];
+		$table->setHeading($heading);
+
+		$view = \Config\Services::renderer();
+		$action = $view->render('AirConditioner\Views\actions/classroom');
+		$data = [1, 'TT105', 'Telecomunication', '1st', '2', $action ];
+		$table->addRow($data);
+
+		$data['table'] = $table;
+        return view('AirConditioner\Views\classroom\index', $data);
     }
+
+	public function create()
+	{
+		return view('AirConditioner\Views\classroom\create');
+	}
 }

@@ -17,8 +17,8 @@ class RemoteAirConditioner extends BaseController
 		$this->repository = Services::airconditionerRepository();
 	}
 
-    public function index()
+    public function show(int $id)
     {
-        echo "remote ac";
+        return view('AirConditioner\Views\remote-ac\show');
     }
 }
