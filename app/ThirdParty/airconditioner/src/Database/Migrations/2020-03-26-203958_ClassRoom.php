@@ -12,18 +12,38 @@ class ClassRoom extends Migration
 				'unsigned'       => true,
 				'auto_increment' => true,
 			],
+			'section' => [
+				'type'       => 'VARCHAR',
+				'constraint' => '191',
+				'null'      => true,
+			],
+			'floor' => [
+				'type'       => 'INT',
+				'constraint' => '5',
+				'null'      => true
+			],
 			'name' => [
 				'type'       => 'VARCHAR',
 				'constraint' => '191',
 			],
 			'temp'  => [
-				'type'       => 'INT',
-				'constraint' => '11',
+				'type'       => 'decimal',
+				'constraint' => '8,3',
 			],
 			'temp_unit'  => [
 				'type'       => 'VARCHAR',
-				'constraint' => '11',
+				'constraint' => '5',
+				'null' => true,
 			],
+			'created_at' => [
+				'type' => 'DATE'
+			],
+			'update_at' => [
+				'type' => 'DATE'
+			],
+			'delete_at' => [
+				'type' => 'DATE'
+			]
 		]);
 		$this->forge->addKey('id', true);
 		$this->forge->createTable('classrooms');

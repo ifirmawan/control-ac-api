@@ -2,7 +2,7 @@
 
 use CodeIgniter\Database\Migration;
 
-class AirConditioner extends Migration
+class AirConditionerTable extends Migration
 {
 	public function up()
 	{
@@ -23,15 +23,27 @@ class AirConditioner extends Migration
 			'active'  => [
 				'type'       => 'TINYINT',
 				'constraint' => '1',
+				'default' => 0
 			],
 			'temp'  => [
-				'type'       => 'INT',
-				'constraint' => '11',
+				'type'       => 'decimal',
+				'constraint' => '8,3',
+				'default' => 0
 			],
 			'wind'  => [
-				'type'       => 'INT',
+				'type'       => 'VARCHAR',
 				'constraint' => '11',
+				'null'      => true
 			],
+			'created_at' => [
+				'type' => 'DATE'
+			],
+			'update_at' => [
+				'type' => 'DATE'
+			],
+			'delete_at' => [
+				'type' => 'DATE'
+			]
 		]);
 		$this->forge->addKey('id', true);
 		$this->forge->addForeignKey('class_room_id', 'classrooms', 'id', 'CASCADE', 'CASCADE');
