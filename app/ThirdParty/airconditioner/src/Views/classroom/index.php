@@ -21,19 +21,19 @@ echo $this->section('content'); ?>
             <div class="card-header">
                 <div class="row mb-3">
                     <div class="col-lg-8 col-12">
-                        <form class="form-inline">
-                            <label for="" class="">Filter Class</label>
-                            <select class="form-control ml-2" name="">
+                        <form action="<?= route_to('classroom.index') ?>" class="form-inline" method="get">
+                            <label >Filter Class</label>
+                            <select class="form-control ml-2" name="s">
                                 <option value="">All Section</option>
-                                <option value="dc">Digital Convergen</option>
-                                <option value="tt">Telecomunication</option>
-                                <option value="se">Software Engineer</option>
+                                <?php  foreach ($section as $key => $option) { ?>
+                                    <option value="<?= $option['section'] ?>"><?= $option['section'] ?></option>
+                                <?php } ?>
                             </select>
                             <div class="input-group mt-2">
-                                <select class="form-control ml-2" name="">
+                                <select class="form-control ml-2" name="f">
                                     <option value="">All floor</option>
-                                    <?php for ($i=1; $i <= 3; $i++) { ?>
-                                        <option value="<?= $i ?>"><?= $i ?></option>
+                                    <?php  foreach ($floor as $key => $option) { ?>
+                                        <option value="<?= $option['floor'] ?>"><?= $option['floor'] ?></option>
                                     <?php } ?>
                                 </select>
                                 <div class="input-group-prepend">
@@ -47,7 +47,7 @@ echo $this->section('content'); ?>
                     </div>
                     <div class="col-lg-4 col-12 pt-2">
                         <div class="text-right">
-                            <a href="<?= site_url('classroom/add') ?>" class="btn btn-primary">
+                            <a href="<?= route_to('classroom.create') ?>" class="btn btn-primary">
                                 Add Class
                             </a>
                         </div>

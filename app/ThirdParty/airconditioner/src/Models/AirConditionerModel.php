@@ -1,15 +1,14 @@
 <?php namespace AirConditioner\Models;
 
-use AirConditioner\Domain\AirConditioner\AirConditioner;
 use CodeIgniter\Model;
 
 /**
- * @property-read \CodeIgniter\Database\MySQLi\Connection $db
- */
+* @property-read \CodeIgniter\Database\MySQLi\Connection $db
+*/
 class AirConditionerModel extends Model
 {
 	protected $table           = 'air_conditioners';
-	protected $returnType      = AirConditioner::class;
+	protected $returnType     = 'array';
 	protected $allowedFields   = [
 		'class_room_id',
 		'name',

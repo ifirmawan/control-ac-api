@@ -1,14 +1,14 @@
 <?php namespace AirConditioner\Config;
 
 $routes->group('ac', ['namespace' => 'AirConditioner\Controllers'], function ($routes) {
-	// URI: /air-conditioner
-	$routes->get('show/(:num)', 'RemoteAirConditioner::show/$1', ['as' => 'ac.index']);
-	// URI: /air-conditioner/add
-	//$routes->match(['get', 'post'], 'add', 'AirConditioner::add', ['as' => 'ac-add']);
+	$routes->get('show/(:num)', 'RemoteAirConditioner::show/$1', ['as' => 'ac.show']);
 });
 
 $routes->group('classroom', ['namespace' => 'AirConditioner\Controllers'], function ($routes) {
 	// URI: /class-room
 	$routes->get('', 'ClassRoom::index', ['as' => 'classroom.index']);
-	$routes->get('add', 'ClassRoom::create', ['as' => 'classroom.show']);
+	$routes->get('create', 'ClassRoom::create', ['as' => 'classroom.create']);
+	$routes->delete('delete/(:num)', 'ClassRoom::delete/$1', ['as' => 'classroom.delete']);
+	$routes->post('store', 'ClassRoom::store', ['as' => 'classroom.store']);
+	$routes->match(['get', 'post'], 'edit/(:num)', 'ClassRoom::edit/$1', ['as' => 'classsroom.edit']);
 });
