@@ -2,6 +2,7 @@
 
 $routes->group('ac', ['namespace' => 'AirConditioner\Controllers'], function ($routes) {
 	$routes->get('show/(:num)', 'RemoteAirConditioner::show/$1', ['as' => 'ac.show']);
+	$routes->post('store', 'RemoteAirConditioner::store', ['as' => 'ac.store']);
 });
 
 $routes->group('classroom', ['namespace' => 'AirConditioner\Controllers'], function ($routes) {

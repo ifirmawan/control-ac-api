@@ -12,10 +12,11 @@ class AirConditionerModel extends Model
 	protected $allowedFields   = [
 		'class_room_id',
 		'name',
+		'temp'
 	];
 	protected $validationRules = [
-		'album_id' => 'required|numeric',
-		'name'    => 'required|alpha_numeric_space|min_length[3]|max_length[255]|is_unique[air_conditioners.name,id,{id}]',
+		'class_room_id' => 'required|numeric',
+		'name'    => 'required|min_length[3]|max_length[191]|is_unique[air_conditioners.name,id,{id}]',
 	];
 	protected $useTimestamps = true;
 	protected $useSoftDeletes = true;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Ac Control - <?php echo $this->getData()['title'] ?? ''; ?> </title>
+    <title> <?php echo $this->getData()['title'] ?? ''; ?> - Ac Control  </title>
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.min.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>" />
     <link rel="stylesheet" href="<?= base_url('assets/css/switch.css') ?>" />

@@ -35,13 +35,13 @@ class AirConditioner extends Migration
 				'null'      => true
 			],
 			'created_at' => [
-				'type' => 'DATE'
+				'type' => 'DATETIME'
 			],
-			'update_at' => [
-				'type' => 'DATE'
+			'updated_at' => [
+				'type' => 'DATETIME'
 			],
-			'delete_at' => [
-				'type' => 'DATE'
+			'deleted_at' => [
+				'type' => 'DATETIME'
 			]
 		]);
 		$this->forge->addKey('id', true);

@@ -27,7 +27,7 @@ class AirConditionerTable extends Migration
 			],
 			'temp'  => [
 				'type'       => 'decimal',
-				'constraint' => '8,3',
+				'constraint' => '8,1',
 				'default' => 0
 			],
 			'wind'  => [
@@ -36,13 +36,13 @@ class AirConditionerTable extends Migration
 				'null'      => true
 			],
 			'created_at' => [
-				'type' => 'DATE'
+				'type' => 'DATETIME'
 			],
-			'update_at' => [
-				'type' => 'DATE'
+			'updated_at' => [
+				'type' => 'DATETIME'
 			],
-			'delete_at' => [
-				'type' => 'DATE'
+			'deleted_at' => [
+				'type' => 'DATETIME'
 			]
 		]);
 		$this->forge->addKey('id', true);

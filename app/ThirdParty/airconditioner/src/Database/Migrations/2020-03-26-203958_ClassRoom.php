@@ -28,7 +28,7 @@ class ClassRoom extends Migration
 			],
 			'temp'  => [
 				'type'       => 'decimal',
-				'constraint' => '8,3',
+				'constraint' => '8,1',
 			],
 			'temp_unit'  => [
 				'type'       => 'VARCHAR',
@@ -36,13 +36,13 @@ class ClassRoom extends Migration
 				'null' => true,
 			],
 			'created_at' => [
-				'type' => 'DATE'
+				'type' => 'DATETIME'
 			],
-			'update_at' => [
-				'type' => 'DATE'
+			'updated_at' => [
+				'type' => 'DATETIME'
 			],
-			'delete_at' => [
-				'type' => 'DATE'
+			'deleted_at' => [
+				'type' => 'DATETIME'
 			]
 		]);
 		$this->forge->addKey('id', true);

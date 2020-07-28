@@ -9,12 +9,12 @@ class Email extends BaseConfig
 	/**
 	 * @var string
 	 */
-	public $fromEmail;
+	public $fromEmail = 'citraauliya@gmail.com';
 
 	/**
 	 * @var string
 	 */
-	public $fromName;
+	public $fromName = 'Citra IT Telkom';
 
 	/**
 	 * @var string
@@ -33,7 +33,7 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $protocol = 'mail';
+	public $protocol = 'smtp';
 
 	/**
 	 * The server path to Sendmail.
@@ -47,28 +47,28 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $SMTPHost;
+	public $SMTPHost = 'smtp.mailtrap.io';
 
 	/**
 	 * SMTP Username
 	 *
 	 * @var string
 	 */
-	public $SMTPUser;
+	public $SMTPUser = '6c38863c6a917d';
 
 	/**
 	 * SMTP Password
 	 *
 	 * @var string
 	 */
-	public $SMTPPass;
+	public $SMTPPass = 'ea3f1b063c62b0';
 
 	/**
 	 * SMTP Port
 	 *
 	 * @var integer
 	 */
-	public $SMTPPort = 25;
+	public $SMTPPort = 587;
 
 	/**
 	 * SMTP Timeout (in seconds)
@@ -110,7 +110,7 @@ class Email extends BaseConfig
 	 *
 	 * @var string
 	 */
-	public $mailType = 'text';
+	public $mailType = 'html';
 
 	/**
 	 * Character set (utf-8, iso-8859-1, etc.)
