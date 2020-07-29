@@ -30,7 +30,7 @@ $routes->setAutoRoute(false);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', '\Myth\Auth\Controllers\AuthController::login');
+$routes->get('/', '\AirConditioner\Controllers\ClassRoom::index');
 $routes->get('/api/classroom', 'API\\ClassRoom::index');
 $routes->post('/api/classroom', 'API\\ClassRoom::store');
 /**

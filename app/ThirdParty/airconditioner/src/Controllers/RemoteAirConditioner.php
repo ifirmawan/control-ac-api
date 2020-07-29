@@ -8,14 +8,19 @@ use CodeIgniter\Exceptions\PageNotFoundException;
 class RemoteAirConditioner extends BaseController
 {
 	protected $ac_model;
+	protected $auth;
 
 	public function __construct()
 	{
 		$this->ac_model = new AirConditionerModel;
+		$this->auth = service('authentication');
 	}
 
     public function show(int $id)
     {
+		if ($this->auth->check() === false) {
+			return redirect()->route('login');
+		}
 		$db = \Config\Database::connect();
 
 		$builder = $db->table('air_conditioners');

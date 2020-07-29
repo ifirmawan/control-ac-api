@@ -8,14 +8,19 @@ use CodeIgniter\Exceptions\PageNotFoundException;
 class ClassRoom extends BaseController
 {
 	protected $classroom_model;
+	protected $auth;
 
 	public function __construct()
 	{
 		$this->classroom_model = new ClassRoomModel;
+		$this->auth = service('authentication');
 	}
 
     public function index()
     {
+		if ($this->auth->check() === false) {
+			return redirect()->route('login');
+		}
 		$table = new \CodeIgniter\View\Table();
 		$template = config('TableBootstrap')->getTemplate();
 		$table->setTemplate($template);

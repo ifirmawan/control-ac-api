@@ -13,7 +13,7 @@
         "kint-php/kint": "^3.3",
         "psr/log": "^1.1",
         "laminas/laminas-escaper": "^2.6",
-        "codeigniter4/translations": "^4.0",
+        "codeigniter4/framework": "dev-master",
         "nesbot/carbon": "^2.35"
     },
     "require-dev": {
